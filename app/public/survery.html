@@ -12,14 +12,19 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+
+    <!--custome css link-->
+    <link rel="stylesheet" href="./CSS/surveryStyles.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="backgroundColor">
       <h1>Survey Questions</h1>
 
       <h3>About You</h3>
 
+      <!--start forms-->
       <form>
+        <!--name input-->
         <div class="form-group">
           <label for="nameInput">Name (Required)</label>
           <input
@@ -29,6 +34,8 @@
             placeholder="Name"
           />
         </div>
+
+        <!--photo input-->
         <div class="form-group">
           <label for="photoInput">Link to Photo Image (Required)</label>
           <input
@@ -39,6 +46,7 @@
           />
         </div>
 
+        <!--Question1-->
         <div class="form-group">
           <label for="question1">Question 1</label>
           <select class="form-control" id="question1">
@@ -51,6 +59,7 @@
           </select>
         </div>
 
+        <!--Question2-->
         <div class="form-group">
           <label for="question2">Question 2</label>
           <select class="form-control" id="question2">
@@ -63,6 +72,7 @@
           </select>
         </div>
 
+        <!--Question 3-->
         <div class="form-group">
           <label for="question3">Question 3</label>
           <select class="form-control" id="question3">
@@ -75,6 +85,7 @@
           </select>
         </div>
 
+        <!--Question 4-->
         <div class="form-group">
           <label for="question4">Question 4</label>
           <select class="form-control" id="question4">
@@ -87,6 +98,7 @@
           </select>
         </div>
 
+        <!--Question 5-->
         <div class="form-group">
           <label for="question5">Question 5</label>
           <select class="form-control" id="question5">
@@ -99,6 +111,7 @@
           </select>
         </div>
 
+        <!--Question 6-->
         <div class="form-group">
           <label for="question6">Question 6</label>
           <select class="form-control" id="question6">
@@ -111,6 +124,7 @@
           </select>
         </div>
 
+        <!--Question 7-->
         <div class="form-group">
           <label for="question7">Question 7</label>
           <select class="form-control" id="question7">
@@ -123,6 +137,7 @@
           </select>
         </div>
 
+        <!--Question 8-->
         <div class="form-group">
           <label for="question8">Question 8</label>
           <select class="form-control" id="question8">
@@ -135,6 +150,7 @@
           </select>
         </div>
 
+        <!--Question 9-->
         <div class="form-group">
           <label for="question9">Question 9</label>
           <select class="form-control" id="question9">
@@ -147,6 +163,7 @@
           </select>
         </div>
 
+        <!--Question 10-->
         <div class="form-group">
           <label for="question10">Question 10</label>
           <select class="form-control" id="question10">
@@ -158,7 +175,14 @@
             <option>5 (Strongly Agree)</option>
           </select>
         </div>
+
+        <!--submit-->
+        <button type="button" class="btn btn-primary btn-lg btn-block mb-5">
+          Submit
+        </button>
       </form>
+      <!--End form-->
+
     </div>
   </body>
 </html>
