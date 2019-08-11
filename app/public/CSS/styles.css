@@ -1,10 +1,19 @@
 #titleText {
     font-size: 60px;
     font-family: 'Questrial', sans-serif;
-
 }
 
 #userIcon {
-    font-size: 48px;
+    font-size: 60px;
     color: dodgerblue;
+}
+
+#bodyStyle {
+    background-color: antiquewhite;
+}
+
+#borderColor {
+    border-bottom: 2px solid dodgerblue;
+    width: 90%;
+    margin: 0 auto;
 }
