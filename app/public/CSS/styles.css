@@ -17,3 +17,18 @@
     width: 90%;
     margin: 0 auto;
 }
+
+.textBody {
+    font-family: 'Questrial', sans-serif;
+    font-size: 35px;
+}
+
+#pollIcon {
+    font-size: 35px;
+}
+
+#surveyButton {
+    font-size: 25px;
+    position: relative;
+    bottom: 4px;
+}
