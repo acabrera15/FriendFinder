@@ -202,7 +202,6 @@
     </div>
 
     <script type="text/javascript">
-
       //checks to see if all inputs have user input
       var validateForm = function() {
         var isValid = true;
@@ -217,10 +216,26 @@
         return isValid;
       };
 
+      //returns an object of all the inputs in an object
+      var getAllInputs = function() {
+        var input = {
+          name: $("#nameInput").val(),
+          photo: $("#photoInput").val(),
+          scores: []
+        };
+
+        for (var i = 1; i < 11; i++) {
+          input.scores.push(Number($(`#question${i}`).val()[0]));
+        }
+
+        return input;
+      };
+
       //checks forms and submits
       $(".btn").on("click", function() {
         if (validateForm()) {
           console.log("t");
+          console.log(getAllInputs());
         } else {
           console.log("f");
         }
