@@ -200,5 +200,31 @@
       </form>
       <!--End form-->
     </div>
+
+    <script type="text/javascript">
+
+      //checks to see if all inputs have user input
+      var validateForm = function() {
+        var isValid = true;
+
+        $(".form-control").each(function(item) {
+          if ($(this).val() === "" || $(this).val() === "Choose...") {
+            isValid = false;
+            return isValid;
+          }
+        });
+
+        return isValid;
+      };
+
+      //checks forms and submits
+      $(".btn").on("click", function() {
+        if (validateForm()) {
+          console.log("t");
+        } else {
+          console.log("f");
+        }
+      });
+    </script>
   </body>
 </html>
