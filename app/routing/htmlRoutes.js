@@ -1,4 +1,13 @@
-// Basic route that sends the user to the home page
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
+var express = require('express');
+var path = require("path");
+var router = express.Router();
+
+router.get('/', function(req,res) {
+    res.sendFile(path.join(__dirname, "../public/home.html"))
+})
+
+router.get('/survey', function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/survery.html"))
 });
+
+module.exports = router;
