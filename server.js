@@ -9,7 +9,9 @@ var path = require("path");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-var routes = require('./app/routing/htmlRoutes.js')
+var htmlRoutes = require('./app/routing/htmlRoutes.js')
+var apiRoutes = require('./app/routing/apiRoutes.js')
+
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -22,10 +24,6 @@ app.use(express.static(path.join(__dirname, './app/public')));
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
-// app.get("/", function(req, res) {
-//   console.log(path.join(__dirname, "/app/public/home.html"))
-//   res.sendFile(path.join(__dirname, "/app/public/home.html"));
-// });
 
-app.use('/', routes)
-app.use('/suvey', routes)
+app.use(htmlRoutes);
+app.use(apiRoutes);

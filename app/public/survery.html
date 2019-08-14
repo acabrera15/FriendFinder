@@ -236,6 +236,10 @@
       $(".btn").on("click", function() {
         if (validateForm()) {
           console.log(getAllInputs());
+          $.post('/api/addFriend', getAllInputs())
+          .then(function(data) {
+            console.log(`Data: ${data}`);
+          }) 
         } else {
           $('#fillOutForms').text('Please fill out entire form')
           console.log("All forms not filled");
