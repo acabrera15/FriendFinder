@@ -194,10 +194,11 @@
         </div>
 
         <!--submit-->
-        <button type="button" class="btn btn-primary btn-lg btn-block mb-5">
+        <button type="button" class="btn btn-primary btn-lg btn-block">
           Submit
         </button>
       </form>
+      <h3 id ="fillOutForms" class='text-danger text-center pt-3 pb-4'></h3>
       <!--End form-->
     </div>
 
@@ -234,10 +235,10 @@
       //checks forms and submits
       $(".btn").on("click", function() {
         if (validateForm()) {
-          console.log("t");
           console.log(getAllInputs());
         } else {
-          console.log("f");
+          $('#fillOutForms').text('Please fill out entire form')
+          console.log("All forms not filled");
         }
       });
     </script>
