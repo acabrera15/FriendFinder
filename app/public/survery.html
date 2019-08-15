@@ -13,14 +13,23 @@
       crossorigin="anonymous"
     />
 
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
     <!--custom css link-->
     <link rel="stylesheet" href="./CSS/surveryStyles.css" />
-
-    <!--jQuery CDN-->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
     ></script>
   </head>
   <body>
@@ -194,12 +203,45 @@
         </div>
 
         <!--submit-->
-        <button type="button" id='submitButton' class="btn btn-primary btn-lg btn-block">
+        <button
+          type="button"
+          id="submitButton"
+          class="btn btn-primary btn-lg btn-block"
+        >
           Submit
         </button>
       </form>
       <h3 id="fillOutForms" class="text-danger text-center pt-3 pb-4"></h3>
       <!--End form-->
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="newFriendModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="newFriendTitle"></h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id='newFriendBody'>
+            
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -235,12 +277,13 @@
       //checks forms and submits
       $("#submitButton").on("click", function() {
         if (validateForm()) {
-          console.log('fdsa')
           console.log(getAllInputs());
           $.post("/api/friends", getAllInputs(), function(data) {
-            console.log(data)
-          })
-          
+            console.log(data);
+            $('#newFriendTitle').text('New Friend');
+            $('#newFriendBody').text(`Your new Friend is ${data.name}`);
+            $('#newFriendModal').modal();
+          });
         } else {
           $("#fillOutForms").text("Please fill out entire form");
           console.log("All forms not filled");
