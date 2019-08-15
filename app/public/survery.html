@@ -194,15 +194,15 @@
         </div>
 
         <!--submit-->
-        <button type="button" class="btn btn-primary btn-lg btn-block">
+        <button type="button" id='submitButton' class="btn btn-primary btn-lg btn-block">
           Submit
         </button>
       </form>
-      <h3 id ="fillOutForms" class='text-danger text-center pt-3 pb-4'></h3>
+      <h3 id="fillOutForms" class="text-danger text-center pt-3 pb-4"></h3>
       <!--End form-->
     </div>
 
-    <script type="text/javascript">
+    <script>
       //checks to see if all inputs have user input
       var validateForm = function() {
         var isValid = true;
@@ -233,15 +233,16 @@
       };
 
       //checks forms and submits
-      $(".btn").on("click", function() {
+      $("#submitButton").on("click", function() {
         if (validateForm()) {
+          console.log('fdsa')
           console.log(getAllInputs());
-          $.post('/api/addFriend', getAllInputs())
-          .then(function(data) {
-            console.log(`Data: ${data}`);
-          }) 
+          $.post("/api/friends", getAllInputs(), function(data) {
+            console.log(data)
+          })
+          
         } else {
-          $('#fillOutForms').text('Please fill out entire form')
+          $("#fillOutForms").text("Please fill out entire form");
           console.log("All forms not filled");
         }
       });
