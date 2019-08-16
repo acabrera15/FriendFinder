@@ -1,3 +1,22 @@
 #backgroundColor {
     background-color: antiquewhite;
 }
+
+
+.bottomLinks {
+    list-style-type: none;
+    display:flex;
+    color: dodgerblue;
+    font-size: 15px
+}
+
+#borderLeft {
+    border-left: 1px solid dodgerblue;
+    height: 17px;
+    margin-top: 3px
+}
+
+ul {
+    padding: 0;
+    padding-top: 7px
+}
