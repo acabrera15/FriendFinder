@@ -291,8 +291,11 @@
           console.log(getAllInputs());
           $.post("/api/friends", getAllInputs(), function(data) {
             console.log(data);
+            var image = $('<img>');
+            image.attr('src', data.photo);
             $('#newFriendTitle').text('New Friend');
             $('#newFriendBody').text(`Your new Friend is ${data.name}`);
+            $('#newFriendBody').append(image);
             $('#newFriendModal').modal();
           });
         } else {
